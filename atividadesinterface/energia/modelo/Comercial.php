@@ -11,17 +11,11 @@
                 return $valorComercial;
             }
 
-            /**
-             * Get the value of consumoComercial
-             */
             public function getConsumoComercial(): float
             {
                         return $this->consumoComercial;
             }
 
-            /**
-             * Set the value of consumoComercial
-             */
             public function setConsumoComercial(float $consumoComercial): self
             {
                         $this->consumoComercial = $consumoComercial;
