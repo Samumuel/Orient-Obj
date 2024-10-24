@@ -10,17 +10,11 @@ require_once("IConsumidorEnergia.php");
             return $valorResidencial;
         }
 
-        /**
-         * Get the value of consumoDiario
-         */
         public function getConsumoDiario(): float
         {
                 return $this->consumoDiario;
         }
 
-        /**
-         * Set the value of consumoDiario
-         */
         public function setConsumoDiario(float $consumoDiario): self
         {
                 $this->consumoDiario = $consumoDiario;
