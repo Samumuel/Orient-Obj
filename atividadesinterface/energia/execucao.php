@@ -18,19 +18,22 @@ do {
             break;
 
         case 1:
+            $valorconsumido = readline("Informe o consumo diário: ");
             $consumo = new Residencial();
-            $consumo->setConsumoDiario(readline("Informe o seu consumo diário de energia: "));
+            $consumo->setConsumoDiario($valorconsumido);
             echo "Você gasta diariamente R$ " . $consumo->getValorFatura() . " \n";
             break;
         case 2:
+            $valorconsumido = readline("Informe o consumo diário: ");
             $consumo = new Industrial();
-            $consumo->setConsumoDiario(readline("Informe o seu consumo diário de energia: "));
+            $consumo->setConsumoDiario($valorconsumido);
             echo "Você gasta diariamente R$ " . $consumo->getValorFatura() . " \n";
             break;
 
         case 3:
+            $valorconsumido = readline("Informe o consumo diário: ");
             $consumo = new Comercial();
-            $consumo->setConsumoComercial(readline("Informe o seu consumo diário de energia: "));
+            $consumo->setConsumoComercial($valorconsumido);
             echo "Você gasta diariamente R$ " . $consumo->getValorFatura() . " \n";
             break;
         default:
