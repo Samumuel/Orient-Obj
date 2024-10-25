@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+    <script>
+        function verificarTexto() {
+            let texto = document.getElementById("sabor").value.toLowerCase();
+            let resultado = document.getElementById("resultado");
+
+            if (texto.length > 3) {
+                if (texto.includes("chocolate")) {
+                    resultado.innerHTML = "Eu amo sorvete de chocolate!";
+                } else if (texto.includes("flocos")) {
+                    resultado.innerHTML = "Ahh, mas chocolate é o meu favorito...";
+                }else if (texto.includes("baunilha")) {
+                    resultado.innerHTML = "Ahh, entendi, você gosta do básico...";
+                }else if (texto.includes("napolitano")) {
+                    resultado.innerHTML = "Você tem familía grande né?";
+                }else {
+                    resultado.innerHTML = "Ahh, eu esperava um sabor de sorvete...";
+                }
+            } else {
+                resultado.innerHTML = "";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Digite o sabor do sorvete:</h1>
+    <input type="text" id="sabor" oninput="verificarTexto()" placeholder="Digite um sabor...">
+    <p id="resultado"></p>
+
+</body>
+</html>
