@@ -1,30 +1,57 @@
 <?php
 
-require_once("Cassino.php");
+require_once("Jogo.php");
+require_once("IAposta.php");
 
-class Double extends Cassino
+class Double extends Jogo implements IAposta
 {
-    protected Cassino $dinheiro;
-    private string $Cor;
+    private string $numSort;
+    private $escolha;
 
-    public function Apostar() {}
+    public function __construct($vA, $nS){
+        $this->valorAposta = $vA;
+        $this->numSort = $nS;
+    }
+
+    public function Apostar($vA, $nS){
+        
+    }
 
     public function Comecar() {}
 
+
     /**
-     * Get the value of Cor
+     * Get the value of numSort
      */
-    public function getCor(): string
+    public function getNumSort(): string
     {
-        return $this->Cor;
+        return $this->numSort;
     }
 
     /**
-     * Set the value of Cor
+     * Set the value of numSort
      */
-    public function setCor(string $Cor): self
+    public function setNumSort(string $numSort): self
     {
-        $this->Cor = $Cor;
+        $this->numSort = $numSort;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of escolha
+     */
+    public function getEscolha()
+    {
+        return $this->escolha;
+    }
+
+    /**
+     * Set the value of escolha
+     */
+    public function setEscolha($escolha): self
+    {
+        $this->escolha = $escolha;
 
         return $this;
     }
