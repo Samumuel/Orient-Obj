@@ -1,13 +1,21 @@
 <?php
 
-require_once("Cassino.php");
+require_once("Jogo.php");
+require_once("IAposta.php");
 
-class Keno extends Cassino
+class Keno extends Jogo implements IAposta
 {
-    protected Cassino $dinheiro;
-    private array $NumSort;
+    private array $numSort;
+    private $escolha;
 
-    public function Apostar() {}
+    public function __construct($vA, $e){
+        $this->valorAposta = $vA;
+        $this->escolha = $e;
+    }
+
+    public function Apostar($vA, $e){
+        
+    }
 
     public function Comecar() {}
 
@@ -16,15 +24,33 @@ class Keno extends Cassino
      */
     public function getNumSort(): array
     {
-        return $this->NumSort;
+        return $this->numSort;
     }
 
     /**
      * Set the value of NumSort
      */
-    public function setNumSort(array $NumSort): self
+    public function setNumSort(array $numSort): self
     {
-        $this->NumSort = $NumSort;
+        $this->numSort = $numSort;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of escolha
+     */
+    public function getEscolha()
+    {
+        return $this->escolha;
+    }
+
+    /**
+     * Set the value of escolha
+     */
+    public function setEscolha($escolha): self
+    {
+        $this->escolha = $escolha;
 
         return $this;
     }
