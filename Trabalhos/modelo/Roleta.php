@@ -8,17 +8,9 @@ class Roleta extends Jogo implements IAposta
     private int $numSort;
     private array $escolha;
 
-    public function __construct($vA, $e){
-        $this->valorAposta = $vA;
-        $this->escolha = $e;
-    }
-
-    public function Apostar($vA, $e){
+    public function Apostar($vA, $e, $x){
 
     }
-
-    public function Comecar() {}
-
     /**
      * Get the value of NumSort
      */
