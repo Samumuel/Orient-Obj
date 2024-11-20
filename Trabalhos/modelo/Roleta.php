@@ -3,18 +3,41 @@
 require_once("Jogo.php");
 require_once("IAposta.php");
 
-class Roleta extends Jogo implements IAposta
+class Keno extends Jogo implements IAposta
 {
-    private int $numSort;
-    private array $escolha;
+    private array $numSort;
+    private $escolha;
 
-    public function Apostar($vA, $e, $x){
+    public function Apostar($vA, $eS, $x)
+    {
+        echo "O valor apostado foi $vA e o número escolhido foi: $eS\n";
 
+        
+        $this->numSort = [];
+        for ($i = 0; $i < 5; $i++) {
+            $this->numSort[] = rand(1, 30);
+        }
+
+        echo "Os números sorteados são: " . implode(', ', $this->numSort) . "\n";
+
+        
+        if (in_array($eS, $this->numSort)) {
+            echo "Parabéns! O número $eS foi sorteado!\n";
+            $vA = $vA * 4;
+            echo "Agora você tem R$", $vA, ". ", "\n";
+            return true;
+        } else {
+            echo "Que pena! O número $eS não foi sorteado.\n";
+            return false;
+        }
     }
+    
+
+
     /**
      * Get the value of NumSort
      */
-    public function getNumSort(): int
+    public function getNumSort(): array
     {
         return $this->numSort;
     }
@@ -22,7 +45,7 @@ class Roleta extends Jogo implements IAposta
     /**
      * Set the value of NumSort
      */
-    public function setNumSort(int $numSort): self
+    public function setNumSort(array $numSort): self
     {
         $this->numSort = $numSort;
 
