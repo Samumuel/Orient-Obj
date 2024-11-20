@@ -19,14 +19,28 @@ do {
             break;
 
         case 1:
+            echo 'Bem vindo a Roleta!', "\n";
+            echo 'Regras:', "\n";
+            echo '1º-Há 37 números, incluindo o 0, você deve escolher um ou mais para apostar.', "\n";
+            echo '2º-Você deve escolher um valor para aposta, caso ganhe o valor apostado no número ganhador será multiplicado por 36, caso perca, o valor será zerado.', "\n";
 
             break;
         case 2:
-
+            echo 'Bem vindo ao Double!', "\n";
+            echo 'Regras:', "\n";
+            echo '1º-Há 2 cores, branco e preto, você deve escolher uma delas e apostar.', "\n";
+            echo '2º-Você deve escolher um valor para aposta, caso ganhe o valor será dobrado, caso perca, o valor será zerado.', "\n";
+            $aposta = new Double();
+            $aposta->setEscolha(readline("Escolha entra branco e preto: "));
+            $aposta->setValorAposta(readline("Diga quanto quer apostar: "));
+            $aposta -> Apostar($aposta->getValorAposta(), $aposta->getEscolha(), 1);
             break;
 
         case 3:
-
+            echo 'Bem vindo ao Keno!', "\n";
+            echo 'Regras:', "\n";
+            echo '1º-Há 35 números, você deve escolher um ou mais para apostar.', "\n";
+            echo '2º-.', "\n";
             break;
         default:
             echo "Opção INVÁLIDA!\n";
