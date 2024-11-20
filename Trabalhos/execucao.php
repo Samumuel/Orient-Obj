@@ -39,8 +39,14 @@ do {
         case 3:
             echo 'Bem vindo ao Keno!', "\n";
             echo 'Regras:', "\n";
-            echo '1º-Há 35 números, você deve escolher um ou mais para apostar.', "\n";
-            echo '2º-.', "\n";
+            echo '1º-Há 30 números, você deve escolher um ou mais para apostar.', "\n";
+            echo "2º- escolha um ou mais para apostar";
+            $aposta = new Keno();
+            $aposta->setEscolha(readline("escolha um numero entre 1 a 30: "));
+            $aposta->setValorAposta(readline("quanto quer apostar?: "));
+            $aposta->Apostar($aposta->getValorAposta(), $aposta->getEscolha(),1);
+            
+            
             break;
         default:
             echo "Opção INVÁLIDA!\n";
