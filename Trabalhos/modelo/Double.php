@@ -5,39 +5,25 @@ require_once("IAposta.php");
 
 class Double extends Jogo implements IAposta
 {
-    private string $numSort;
     private $escolha;
+    private array $cores;
 
-    public function __construct($vA, $nS){
-        $this->valorAposta = $vA;
-        $this->numSort = $nS;
+    public function Apostar($vA, $eS, $x){
+
+        echo "O valor apostado foi ", $vA, " na cor ", $eS, "\n";
+
+        $cores = ['branco', 'preto'];
+        $sortear = $cores[array_rand($cores)];
+        echo "A cor sorteada: $sortear", "\n";
+
+        if($sortear == $eS){
+            echo "Parabéns! Você acertou!", "\n";
+            $vA = $vA * 2;
+            echo "Agora você tem R$", $vA, ". ", "\n";
+        } else {
+            echo "Infelizmente você perdeu.", "\n";
+        }
     }
-
-    public function Apostar($vA, $nS){
-        
-    }
-
-    public function Comecar() {}
-
-
-    /**
-     * Get the value of numSort
-     */
-    public function getNumSort(): string
-    {
-        return $this->numSort;
-    }
-
-    /**
-     * Set the value of numSort
-     */
-    public function setNumSort(string $numSort): self
-    {
-        $this->numSort = $numSort;
-
-        return $this;
-    }
-
     /**
      * Get the value of escolha
      */
@@ -52,6 +38,24 @@ class Double extends Jogo implements IAposta
     public function setEscolha($escolha): self
     {
         $this->escolha = $escolha;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of cores
+     */
+    public function getCores(): array
+    {
+        return $this->cores;
+    }
+
+    /**
+     * Set the value of cores
+     */
+    public function setCores(array $cores): self
+    {
+        $this->cores = $cores;
 
         return $this;
     }
