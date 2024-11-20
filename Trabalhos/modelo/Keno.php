@@ -8,13 +8,31 @@ class Keno extends Jogo implements IAposta
     private array $numSort;
     private $escolha;
 
-    public function Apostar($vA, $eS, $x){
-        $i = 0;
-        for($i == 0; $i <= $x; $i++){
-            $numero = rand(1, 35);
-            echo "Número sorteado: $numero";
+    public function Apostar($vA, $eS, $x)
+    {
+        echo "O valor apostado foi $vA e o número escolhido foi: $eS\n";
+
+        
+        $this->numSort = [];
+        for ($i = 0; $i < 3; $i++) {
+            $this->numSort[] = rand(1, 30);
+        }
+
+        echo "Os números sorteados são: " . implode(', ', $this->numSort) . "\n";
+
+        
+        if (in_array($eS, $this->numSort)) {
+            echo "Parabéns! O número $eS foi sorteado!\n";
+            $vA = $vA * 5;
+            echo "Agora você tem R$", $vA, ". ", "\n";
+            return true;
+        } else {
+            echo "Que pena! O número $eS não foi sorteado.\n";
+            return false;
         }
     }
+    
+
 
     /**
      * Get the value of NumSort
