@@ -2,7 +2,6 @@
 
 interface IAposta
 {
-    public function Apostar($vA, $nS);
+    public function Apostar($vA, $nS, $x);
 
-    public function Comecar();
 }
