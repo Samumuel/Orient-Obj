@@ -1,6 +1,5 @@
 <?php
 
-require_once("modelo/Roleta.php");
 require_once("modelo/Double.php");
 require_once("modelo/Keno.php");
 
@@ -39,8 +38,8 @@ do {
         case 3:
             echo 'Bem vindo ao Keno!', "\n";
             echo 'Regras:', "\n";
-            echo '1º-Há 30 números, você deve escolher um ou mais para apostar.', "\n";
-            echo "2º- escolha um ou mais para apostar";
+            echo '1º-Há 30 números, você deve escolher um e tentar sua sorte.', "\n";
+            echo "2º- escolha um numero para apostar\n";
             $aposta = new Keno();
             $aposta->setEscolha(readline("escolha um numero entre 1 a 30: "));
             $aposta->setValorAposta(readline("quanto quer apostar?: "));
