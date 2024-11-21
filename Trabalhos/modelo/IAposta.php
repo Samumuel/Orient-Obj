@@ -2,6 +2,6 @@
 
 interface IAposta
 {
-    public function Apostar($vA, $nS, $x);
+    public function Apostar($vA, $nS);
 
 }
