@@ -5,10 +5,9 @@ require_once("IAposta.php");
 
 class Double extends Jogo implements IAposta
 {
-    private $escolha;
     private array $cores;
 
-    public function Apostar($vA, $eS, $x){
+    public function Apostar($vA, $eS){
 
         echo "O valor apostado foi ", $vA, " na cor ", $eS, "\n";
 
@@ -23,23 +22,10 @@ class Double extends Jogo implements IAposta
         } else {
             echo "Infelizmente você perdeu.", "\n";
         }
-    }
-    /**
-     * Get the value of escolha
-     */
-    public function getEscolha()
-    {
-        return $this->escolha;
-    }
 
-    /**
-     * Set the value of escolha
-     */
-    public function setEscolha($escolha): self
-    {
-        $this->escolha = $escolha;
-
-        return $this;
+        $cores = ['branco', 'preto'];
+        $sortear = $cores[array_rand($cores)];
+        echo "A cor sorteada: $sortear", "\n";
     }
 
     /**
