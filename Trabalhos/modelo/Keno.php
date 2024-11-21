@@ -6,9 +6,8 @@ require_once("IAposta.php");
 class Keno extends Jogo implements IAposta
 {
     private array $numSort;
-    private $escolha;
 
-    public function Apostar($vA, $eS, $x)
+    public function Apostar($vA, $eS)
     {
         echo "O valor apostado foi $vA e o número escolhido foi: $eS\n";
 
@@ -34,6 +33,25 @@ class Keno extends Jogo implements IAposta
     
 
 
+    /**
+     * Get the value of NumSort
+     */
+    public function getNumSort(): array
+    {
+        return $this->numSort;
+    }
+
+    /**
+     * Set the value of NumSort
+     */
+    public function setNumSort(array $numSort): self
+    {
+        $this->numSort = $numSort;
+
+        return $this;
+    }
+
+}
     /**
      * Get the value of NumSort
      */
